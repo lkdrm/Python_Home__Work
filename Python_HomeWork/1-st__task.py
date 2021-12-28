@@ -9,7 +9,7 @@ b = input("Enter a second numb:")
 c = input("Enter a third numb:")
 
 print("Your numbs is:",a+b+c)
-
+print("End of program")
 """
 
 """
@@ -21,7 +21,7 @@ c = int(input("Enter the third numb:"))
 d = int(input("Enter the fourth numb:"))
 
 print("Plural of numbs is:",a*b*c*d)
-
+print("End of program")
 """
 """
 #Third task:
@@ -44,7 +44,7 @@ elif conv == "mls" :
     print("You have been convert in miles:", numb*0.00062137)
 else :
     print("You wrote incorect convert!")
-
+print("End of program")
 """
 """
 #Fourth task:
@@ -56,10 +56,13 @@ h = int(input("Please enter the height:"))
 S = (1/2*a)*h
 
 print("The area of a triangle is:", "S =", S)
+print("End of program")
 """
 #fifth task:
-
+"""
 print("The program will reverse you numbs & words")
 numb = input("Enter the numbs:")
 
 print("Reverse",numb[::-1])
+print("End of program")
+"""
