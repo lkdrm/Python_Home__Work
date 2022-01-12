@@ -80,12 +80,13 @@ find_numb(99)
 
 def the_numbers_of_factorial(l):
     factorials=[]
-    d = 1
     for i in l:
+        d = 1
         for f in range(1,i+1):
+            d*f
+        factorials.append(d)
+    return factorials
             
-
-
 the_numbers_of_factorial([1,2,3])
 
 
