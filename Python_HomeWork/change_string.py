@@ -116,3 +116,26 @@ def change_text(text):
 
 print(change_text(my_text))
 
+# The best version:
+
+my_text = "I love air and computer"
+
+def find_and_change_2(word):
+    if word[0].lower() in "aeiyou":
+        change = word + "way"
+        return change
+    if word[0].lower() in "hckrdtnbflm":
+        change = word[1:] + word[0] + "ay"
+        return change
+
+def change_text_2(text):
+    my_text = text.split()
+    new_list = []
+    for i in my_text:
+        new_word = find_and_change_2(i)
+        new_list.append(new_word)
+    return " ".join(new_list)
+
+print(change_text_2(my_text))
+
+
