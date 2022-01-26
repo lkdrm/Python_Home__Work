@@ -98,49 +98,21 @@ print(find_and_change_2(word_2))
 print(find_and_change_2(word))
 
 
-
-t = my_text.split(" ")
-print(t)
-
-for i in t:
-    print(i)
-
 my_text = "I love air and computer"
 
 def change_text(text):
-    my_text = text.split(" ")
+    my_text = text.split()
     for i in my_text:   
-        if i[0] in "aeiyou":
-            find = my_text.index(i)
+        if i[0].lower() in "aeiyou":
+            find = my_text.index(i) 
             change = my_text.pop(find) + "way"
-            my_text.insert(find,change)    
+            my_text.insert(find,change)
+        if i[0].lower() in "hckrdtnbflm":
+             find = my_text.index(i)
+             change = my_text.pop(find)
+             change_2 = change[1:] + change[0] + "ay" #+ #change[-1]
+             my_text.insert(find,change_2) 
     return " ".join(my_text)
 
 print(change_text(my_text))
-
-"""
-def change_text(text):
-    my_text = text.split(" ")
-    #print(my_text.index("air"))
-    for i in my_text:   
-        if i[0] in "aeiyou": 
-            find = my_text.index(i)
-            change = my_text.pop(find) + "way"
-            insert_word = my_text.insert(find,change)
-            #
-            #my_text.insert(my_text.index(i),number)
-        #elif i[0] in "aeiyou" and ".,":
-            #return i[0:-1] + "way" + i[-1]
-    return " ".join(my_text)
-
-print(change_text(my_text))
-"""
-
-
-# retezec = "air"
-# retezec += "way"
-
-# retezec = "computer" 
-# retezec[1:] + retezec[0] + "ay"
-
 
