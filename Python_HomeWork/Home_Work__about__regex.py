@@ -50,9 +50,9 @@ import re
 my_text_5 = "Edit the Expression & Text to see matches. Roll over matches or the expression for details. PCRE & JavaScript flavors of !RegEx are! supported. Valid? ate your expression with Tests mode."
 
 regex_5 = re.compile(r"[,.:?!]\s")
-result_5 = regex_5.search(my_text_5)
+result_5 = regex_5.split(my_text_5)
 
-print(result_5.group())
+print(result_5)
 
 #6 task:
 #   Napište regex, který najde slovo o délce minimálně 7 znaků.
