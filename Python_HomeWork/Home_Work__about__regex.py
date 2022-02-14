@@ -71,7 +71,7 @@ import re
 
 my_text_7 = "Napište regex, který najde slovo neobsahující písmeno o (nebo O)."
 
-regex_7 = re.compile(r"[^oO]")
+regex_7 = re.compile(r"\b[^oO\s]+\b")
 result_7 = regex_7.search(my_text_7)
 
 print(result_7.group())
