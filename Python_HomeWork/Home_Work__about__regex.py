@@ -82,7 +82,7 @@ import re
 
 my_text_8 = "my number is - 777 645 789"
 
-regex_8 = re.compile(r"(\b(\d{3}) (\d{3} \d{3}))\b")
+regex_8 = re.compile(r"\b((\d{3}) (\d{3} \d{3}))\b")
 result_8 = regex_8.search(my_text_8)
 
 print(result_8.group())
