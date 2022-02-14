@@ -99,7 +99,7 @@ import re
 my_email = "bork322gmail.com"
 my_email_2 = ""
 
-regex_9 = re.compile(r"[\w]+@[a-zA-Z]+\.[com|net]\b")
+regex_9 = re.compile(r"[\w]+@[a-zA-Z]+\.(com|net)\b")
 result = regex.search(my_email)
 
 print(result.group())
