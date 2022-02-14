@@ -134,7 +134,23 @@ def change_dict(some_dict):
 
 print(change_dict(some_dict))
 
+#7 task:
+#   Vytvočte funkci, která narovná seznam - tj. ze seznamu 
+#   dvě úrovně hlubokého vytvoří seznam jednoúrovňový.
+#   [[1,2], [3,4]] => [1, 2, 3, 4]
 
+my_list = [[1,2], [3,4]]
+
+def new_list(my_list):
+    my_new_list = [
+        number
+        for i in my_list
+            for number in i
+    ]
+    return my_new_list
+
+print(new_list(my_list))
+    
 
 
 
