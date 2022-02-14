@@ -60,7 +60,7 @@ import re
 
 my_text_6 = "RegExr was created by gskinner.com, and is proudly hosted by Media Temple."
 
-regex_6 = re.compile(r"\w{7}")
+regex_6 = re.compile(r"[A-Za-z]{7}")
 result_6 = regex_6.search(my_text_6)
 
 print(result_6.group())
