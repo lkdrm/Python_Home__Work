@@ -26,3 +26,17 @@ with open("First_task.txt","r") as reader, open("First_task__ready.txt","w") as 
         output.write("\n")
 
 
+
+
+#######better version:
+import re
+regex_compile = re.compile(r"\w{7,}")
+
+with open("First_task.txt","r") as reader, open("First_task__ready.txt","w") as output:
+    for line in reader:
+        regex_search = regex_compile.findall(line)
+        if len(regex_search) > 0:
+            words = " ".join(regex_search)
+            output.write(words)
+            output.write("\n")
+
