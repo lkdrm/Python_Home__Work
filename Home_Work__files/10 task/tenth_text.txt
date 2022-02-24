@@ -1,0 +1,4 @@
+Hello, how do you do?
+Thank i`m fine!
+The longest word which i`m must to find.
+longestword
