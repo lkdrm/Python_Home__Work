@@ -10,9 +10,9 @@ with open("fifth_text.txt","r") as reader:
         sum_of_leters.append(len(word))
     print(r"The sum of letters are:",sum(sum_of_leters))
 """
-
+letter = input("Enter which letter we are looking for")
 regex_compile = re.compile(r"[d]")
-
+# i can use (fr"{letter}")
 with open ("fifth_text.txt", "r") as reader:
     sum_of_leters = []
     for letter in reader:
