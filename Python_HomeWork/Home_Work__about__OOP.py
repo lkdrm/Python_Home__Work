@@ -88,7 +88,7 @@ které ho používá.
 
 """
 
-hunday_car = Motor("Plyn",30)
+hunday_car.motor.type = "elektro"
 
 print(hunday_car)
 
