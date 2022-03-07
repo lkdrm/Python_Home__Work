@@ -40,9 +40,6 @@ které ho používá.
 
 """
 
-from unicodedata import name
-
-
 class Motor:
     def __init__(self,type:str, hp:int):
         self.type = type
