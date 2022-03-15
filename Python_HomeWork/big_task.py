@@ -50,9 +50,6 @@ Vytvořte třídu zvíře. Zvíře má počet nohou, barvu a metodu vydej_zvuk
 
 """
 
-from unicodedata import name
-
-
 class Animals:
     def __init__(self,legs:int,color:str):
         self.legs = legs
@@ -91,7 +88,7 @@ class Dog(HomePets):
         return f"This my dog {self.name}" 
     
 frank = Dog("black","shepherd","Frank")
-Djack = Dog("black & green","shepherd","Djeck")
+djack = Dog("black & green","shepherd","Djack")
 
 print(frank)
 print(frank.a_voice())
@@ -186,12 +183,63 @@ zvířata s určitým počtem nohou (ten dostane jako parametr).
 class Zoo():
     def __init__(self):
         self.cage_for_dogs = []
+        self.count_dogs = 0
         self.cage_for_cats = []
+        self.count_cats = 0
         self.cage_for_snakes = []
+        self.count_snakes = 0
+        self.cage_all = []
+        self.count_all = 0
     
     def insert_animal(self,pet):
+        self.cage_all.append(pet)
         if isinstance(pet,Dog):
             self.cage_for_dogs.append(pet)
+            self.count_dogs+=1
+            self.count_all+=1
+        elif isinstance(pet,Cat):
+            self.cage_for_cats.append(pet)
+            self.count_cats+=1
+            self.count_all+=1
+        elif isinstance(pet,Snake):
+            self.cage_for_snakes.append(pet)
+            self.count_snakes+=1
+            self.count_all+=1   
 
-        
+    def count_animals(self,cage):
+        return len(cage)
+
+    def see_color(self,color):
+        for animal in self.cage_all:
+            if animal.color == color:
+                return "".join("\n"+f"The {animal.name} have a {animal.color} which you want to find") 
     
+    def __str__(self,animal:str):
+        try:
+            if animal == "Dogs":
+                return "".join("\n"+f"In this cage we have {self.count_dogs} dogs.\nHe have name: "+str(pet.name) 
+                    for pet in self.cage_for_dogs)
+            elif animal == "Cats":
+                return "".join("\n"+f"In this cage we have {self.count_cats} cats.\nHe have name: "+str(pet.name) 
+                    for pet in self.cage_for_cats)
+            elif animal == "Snakes":
+                return "".join("\n"+f"In this cage we have {self.count_snakes} snakes.\nHe have name: "+str(pet.name) 
+                    for pet in self.cage_for_snakes)
+            elif animal == "All":
+                return f"In Zoo we have {self.count_all} animals"
+        except:
+            return f"Please enter a correct, what do you want to know."
+
+
+
+my_zoo = Zoo()
+        
+my_zoo.insert_animal(frank)
+my_zoo.insert_animal(djack)
+my_zoo.insert_animal(flokie)
+my_zoo.insert_animal(chubaka)
+my_zoo.insert_animal(severus)
+my_zoo.insert_animal(okar)
+
+print(my_zoo.__str__("All"))
+print(my_zoo.see_color("black"))  
