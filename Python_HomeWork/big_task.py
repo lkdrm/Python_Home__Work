@@ -193,18 +193,16 @@ class Zoo():
     
     def insert_animal(self,pet):
         self.cage_all.append(pet)
+        self.count_all+=1
         if isinstance(pet,Dog):
             self.cage_for_dogs.append(pet)
             self.count_dogs+=1
-            self.count_all+=1
         elif isinstance(pet,Cat):
             self.cage_for_cats.append(pet)
             self.count_cats+=1
-            self.count_all+=1
         elif isinstance(pet,Snake):
             self.cage_for_snakes.append(pet)
-            self.count_snakes+=1
-            self.count_all+=1   
+            self.count_snakes+=1   
 
     def count_animals(self,cage):
         return len(cage)
