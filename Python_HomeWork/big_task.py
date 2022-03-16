@@ -139,7 +139,7 @@ class Cage:
     def __init__(self):
         self.cage = []
 
-    def insert_pet(self,animal):
+    def insert_pet(self,animal:str):
         self.cage.append(animal)
 
     def __str__(self):
@@ -191,7 +191,7 @@ class Zoo():
         self.cage_all = []
         self.count_all = 0
     
-    def insert_animal(self,pet):
+    def insert_animal(self,pet:str):
         self.cage_all.append(pet)
         self.count_all+=1
         if isinstance(pet,Dog):
@@ -202,16 +202,30 @@ class Zoo():
             self.count_cats+=1
         elif isinstance(pet,Snake):
             self.cage_for_snakes.append(pet)
-            self.count_snakes+=1   
+            self.count_snakes+=1  
 
-    def count_animals(self,cage):
+    def count_animals(self,cage:str):
         return len(cage)
 
-    def see_color(self,color):
+    def see_color(self,color:str):
         for animal in self.cage_all:
             if animal.color == color:
-                return "".join("\n"+f"The {animal.name} have a {animal.color} which you want to find") 
+                print("".join("\n"+f"The {animal.name} have a {animal.color} which you want to find")) 
     
+    def count_legs(self,legs:int):
+        for animal in self.cage_all:
+            try:
+                if animal.legs == legs:
+                    print("".join("\n"+f"The animal {animal.__class__} have name a {animal.name} and have a {animal.legs} legs"))
+            except:
+                print("We haven`t animal with number of legs.")
+
+    def sponzor_sum_of_legs(self):
+        boots_for_legs = []
+        for animal in self.cage_all:
+            boots_for_legs.append(animal.legs)
+        return sum(boots_for_legs)
+
     def __str__(self,animal:str):
         try:
             if animal == "Dogs":
@@ -240,4 +254,7 @@ my_zoo.insert_animal(severus)
 my_zoo.insert_animal(okar)
 
 print(my_zoo.__str__("All"))
-print(my_zoo.see_color("black"))  
+(my_zoo.see_color("black"))
+(my_zoo.count_legs(4))  
+
+print(f"You must to buy {my_zoo.sponzor_sum_of_legs()} boots for all animals")
