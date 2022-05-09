@@ -1,3 +1,4 @@
+import string
 dict_of_logs = {'user':'1234',}
 count = 1
 
@@ -33,11 +34,10 @@ while True:
         new_user_password = input("Enter here your new password: ")
         print(new_user_password)
         if len(new_user_password) >= 8:# check a long
-            if len({"q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x",
-                "c","v","b","n","m",'Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M',} & set(new_user_password)) >=3: # check if there are a letters
+            if len(set(string.ascii_letters) & set(new_user_password)) >=3: # check if there are a letters
                 if not new_user_password.islower() and not new_user_password.isupper(): # check a lower and upper 
-                    if len({'1','2','3','4','5','6','7','8','9','0'} & set(new_user_password)) >=3: # check if there are a numbers
-                        if len({'!','@','#','$','?','*'} & set(new_user_password)) >=1: # check if there is one symbol
+                    if len(set(string.digits) & set(new_user_password)) >=3: # check if there are a numbers
+                        if len(set('!@#$?*') & set(new_user_password)) >=1: # check if there is one symbol
                             dict_of_logs[input("Enter again you login: ")]=new_user_password
                             print("You have been create a new account\n")
                             print(dict_of_logs)
